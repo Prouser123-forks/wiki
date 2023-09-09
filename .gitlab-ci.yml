@@ -1,0 +1,12 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - mv ./* public
+  artifacts:
+    paths:
+      - public
+  only:
+    - gh-pages
